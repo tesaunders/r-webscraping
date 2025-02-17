@@ -22,7 +22,7 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Update data
-        run: Rscript -e 'source("scrape.R")'
+        run: Rscript -e 'source("scrape-imdb.R")'
 
       - name: Commit results
         run: |

@@ -1,0 +1,103 @@
+---
+title: "Workshop title"
+format: revealjs
+---
+
+## Housekeeping
+
+- Audience: New/beginner programmers with no GitHub Actions experience.
+- This workshop isn't recorded.
+- Ask questions in chat at any time.
+- All materials are [here](https://github.com/tesaunders/r-scraping-tutorial).
+
+## Why Use GitHub Actions?
+
+[GitHub Actions](https://docs.github.com/en/actions/about-github-actions/understanding-github-actions) allow you to automate a task based on a trigger event.
+
+Researchers can build up a dataset over time, which updates automatically.
+
+Examples of data sources:
+
+- Government statistics, indicators, performance data
+- Meta-research, publications, citation data
+- Weather, climate, environmental monitoring data
+- Economic, company, sales data
+
+## Scraping vs APIs
+
+There are two main ways of collecting data from the web:
+
+1. Application Programming Interfaces (APIs), when available, are preferred, because the data is structured nicely and queries are standardised.
+
+1. Scraping is necessary when APIs are not available, but some websites prohibit scraping in their terms of service.
+
+In New Zealand, '[fair dealing](https://www.copyright.co.nz/downloads/assets/5212/1/fact-sheet:-fair-dealing-in-new-zealand.pdf)' provisions in the Copyright Act exempt use of a work from copyright infringement if the use is for research or private study, and the use is 'fair'. Seek legal advice if you need more information.
+
+## Version Control
+
+Git is popular version control software, installed locally on your machine.
+
+- Tracks changes to files in a repository by comparing differences.
+- Updated files are 'committed' to the repository.
+- Commits are like snapshots in time of the files in the repository.
+- Commits can be rolled back.
+
+## Remote Repository
+
+- GitHub hosts remote repositories (a mirror of your local repository in the cloud).
+- Commits are 'pushed' from local up to remote, or 'pulled' from remote down to local repositories.
+- GitHub Actions are run on the remote repository.
+
+## GitHub Actions
+
+A *GitHub Actions workflow* is triggered when an *event* occurs in the remote repository. This causes one or more *jobs* to be run, and each job is made up of one or more *steps*.
+
+A GHA workflow is defined inside a special file which always sits in the `.github/workflows` directory. 
+
+## GitHub Actions: Events & Jobs
+
+Common events that trigger a workflow include:
+
+- A particular schedule (e.g. run once a month)
+- When a commit is pushed to a remote repository
+- When someone comments on the repository to outline an issue that needs fixing
+
+Common steps making up jobs include:
+
+- Run a script
+- Build or update a website
+- Perform tests on changed files to ensure code is valid
+
+# Our Example: What Are The Files?
+
+This repository contains an R script to scrape a small amount of data from the Internet Movie Database, save the result in a .csv file, and run once a month.
+
+`scrape.R` = R script to collect current 25 most popular tv series from IMDb.
+
+`/data` = folder where data will be saved.
+
+## Our Example: What Are The Files?
+
+It also contains a GitHub Action defined here:
+
+`/.github/workflows/update.yml`
+
+YAML files contain key:value pairs. You can call the YAML file anything, but the content and structure of the file needs to adhere to a particular [format](https://docs.github.com/en/actions/writing-workflows/workflow-syntax-for-github-actions). 
+
+## Our Example: What Are The Files?
+
+`/slides` = folder containing these slides.
+
+`.gitignore` = file created by Git defining which files should be excluded from tracking.
+
+`r-scraping-tutorial.Rproj` = RStudio project file.
+
+
+
+
+
+
+
+
+
+

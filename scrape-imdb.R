@@ -45,4 +45,4 @@ top_tv <- data.frame(
 
 # Save a .csv file where the filename is appended with the date
 
-write.csv(top_tv, paste0("top_tv-", Sys.Date(), ".csv"))
+write.csv(top_tv, paste0("data/top_tv-", Sys.Date(), ".csv"))
