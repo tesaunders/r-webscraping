@@ -1,0 +1,100 @@
+[
+  {
+    "objectID": "slides.html#housekeeping",
+    "href": "slides.html#housekeeping",
+    "title": "An Introduction to Scraping Data From the Web with R",
+    "section": "Housekeeping",
+    "text": "Housekeeping\n\nAudience: Beginner R programmers with no scraping experience.\nThis workshop isn’t recorded.\nAsk questions in chat at any time.\nAll materials are here."
+  },
+  {
+    "objectID": "slides.html#scraping-vs-apis",
+    "href": "slides.html#scraping-vs-apis",
+    "title": "An Introduction to Scraping Data From the Web with R",
+    "section": "Scraping vs APIs",
+    "text": "Scraping vs APIs\nThere are two main ways of collecting data from the web:\n\n\nApplication Programming Interfaces (APIs), when available, are preferred, because the data is structured nicely and queries are standardised.\n\n\n\n\nScraping is necessary when APIs are not available, but some websites prohibit scraping in their terms of service."
+  },
+  {
+    "objectID": "slides.html#legal-stuff",
+    "href": "slides.html#legal-stuff",
+    "title": "An Introduction to Scraping Data From the Web with R",
+    "section": "Legal Stuff",
+    "text": "Legal Stuff\nWeb scraping occupies a complex legal space:\n\n\nWebsite terms of service\nCopyright law\nPrivacy laws\nDifferent jurisdictions\n\n\nI’m not a lawyer - use at your own risk.\nUse common sense, and be polite."
+  },
+  {
+    "objectID": "slides.html#understanding-html",
+    "href": "slides.html#understanding-html",
+    "title": "An Introduction to Scraping Data From the Web with R",
+    "section": "Understanding HTML",
+    "text": "Understanding HTML\n&lt;html&gt;\n&lt;head&gt;\n  &lt;title&gt;Page title&lt;/title&gt;\n&lt;/head&gt;\n&lt;body&gt;\n  &lt;h1 id='first'&gt;A heading&lt;/h1&gt;\n  &lt;p&gt;Some text &amp; &lt;b&gt;some bold text.&lt;/b&gt;&lt;/p&gt;\n  &lt;img src='myimg.png' width='100' height='100'&gt;\n&lt;/body&gt;\n\nMost pages containing data generally have a consistent, hierarchical structure.\nHTML elements have a start tag, optional attributes, an end tag, and contents."
+  },
+  {
+    "objectID": "slides.html#understanding-css",
+    "href": "slides.html#understanding-css",
+    "title": "An Introduction to Scraping Data From the Web with R",
+    "section": "Understanding CSS",
+    "text": "Understanding CSS\n\nCascading Style Sheets define the visual styling of HTML documents.\nCSS selectors define patterns for locating HTML elements, and are useful for scraping.\n\nTo extract data of interest with {rvest}, find the relevant CSS selectors first. - Right click on an element on the page and click Inspect (Firefox, Chrome, etc). - This opens the complete HTML page, centered on the element that you just clicked. - Explore the page and get a sense of what selectors might work. - Pay attention to the class and id attributes"
+  },
+  {
+    "objectID": "slides.html#scraping-in-r",
+    "href": "slides.html#scraping-in-r",
+    "title": "An Introduction to Scraping Data From the Web with R",
+    "section": "Scraping in R",
+    "text": "Scraping in R\n{rvest}: A Tidyverse package for webscraping."
+  },
+  {
+    "objectID": "slides.html#version-control",
+    "href": "slides.html#version-control",
+    "title": "An Introduction to Scraping Data From the Web with R",
+    "section": "Version Control",
+    "text": "Version Control\nUsing a version control system is good practice when developing software (code). It also means you can collaborate with others and you’ll have access to some cool automation tools.\nGit is a popular version control system, installed locally on your machine.\n\nTracks changes to files in a repository by comparing differences.\nUpdated files are ‘committed’ to the repository.\nCommits are like snapshots in time of the files in the repository.\nCommits can be rolled back easily."
+  },
+  {
+    "objectID": "slides.html#remote-repositories",
+    "href": "slides.html#remote-repositories",
+    "title": "An Introduction to Scraping Data From the Web with R",
+    "section": "Remote Repositories",
+    "text": "Remote Repositories\n\nGitHub hosts remote repositories (a mirror of your local repository in the cloud).\nCommits are ‘pushed’ from local up to remote, or ‘pulled’ from remote down to local repositories.\nGitHub Actions (automations) are run on the remote repository."
+  },
+  {
+    "objectID": "slides.html#github-actions",
+    "href": "slides.html#github-actions",
+    "title": "An Introduction to Scraping Data From the Web with R",
+    "section": "GitHub Actions",
+    "text": "GitHub Actions\nGitHub Actions allow you to automate a task based on a trigger event.\nFor example, researchers can automatically (re)scrape data over time, automatically.\nA GitHub Actions workflow is triggered when an event occurs in the remote repository. This causes one or more jobs to be run, and each job is made up of one or more steps.\nA GHA workflow is defined inside a special file which always sits in the .github/workflows directory."
+  },
+  {
+    "objectID": "slides.html#github-actions-events-jobs",
+    "href": "slides.html#github-actions-events-jobs",
+    "title": "An Introduction to Scraping Data From the Web with R",
+    "section": "GitHub Actions: Events & Jobs",
+    "text": "GitHub Actions: Events & Jobs\nCommon events that trigger a workflow include:\n\nA particular schedule (e.g. run once a month)\nWhen a commit is pushed to a remote repository\nWhen someone comments on the repository to outline an issue that needs fixing\n\nCommon steps making up jobs include:\n\nRun a script\nBuild or update a website\nPerform tests on changed files to ensure code is valid"
+  },
+  {
+    "objectID": "slides.html#our-example-what-are-the-files-1",
+    "href": "slides.html#our-example-what-are-the-files-1",
+    "title": "An Introduction to Scraping Data From the Web with R",
+    "section": "Our Example: What Are The Files?",
+    "text": "Our Example: What Are The Files?\nIt also contains a GitHub Action defined here:\n/.github/workflows/update.yml\nYAML files contain key:value pairs. You can call the YAML file anything, but the content and structure of the file needs to adhere to a particular format."
+  },
+  {
+    "objectID": "slides.html#our-example-what-are-the-files-2",
+    "href": "slides.html#our-example-what-are-the-files-2",
+    "title": "An Introduction to Scraping Data From the Web with R",
+    "section": "Our Example: What Are The Files?",
+    "text": "Our Example: What Are The Files?\nslides.qmd = code version of these slides.\n.gitignore = file created by Git defining which files should be excluded from version control.\nr-scraping-tutorial.Rproj = RStudio project file."
+  },
+  {
+    "objectID": "slides.html#resources",
+    "href": "slides.html#resources",
+    "title": "An Introduction to Scraping Data From the Web with R",
+    "section": "Resources",
+    "text": "Resources\nWorkshop materials R for Data Science Beginner git lesson Happy Git With R rvest"
+  },
+  {
+    "objectID": "slides.html#where-do-i-start",
+    "href": "slides.html#where-do-i-start",
+    "title": "An Introduction to Scraping Data From the Web with R",
+    "section": "Where Do I Start?",
+    "text": "Where Do I Start?\n\nSet up a GitHub repository and RStudio project.\nWrite an R script to scrape something using rvest.\nCreate a GitHub Action to automate the scraping based on your chosen frequency."
+  }
+]

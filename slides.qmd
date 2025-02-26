@@ -1,0 +1,164 @@
+---
+title: "An Introduction to Scraping Data From the Web with R"
+author: "Tom Saunders"
+format:
+  revealjs:
+    embed-resources: true
+---
+
+## Housekeeping
+
+- Audience: Beginner R programmers with no scraping experience.
+- This workshop isn't recorded.
+- Ask questions in chat at any time.
+- All materials are [here](https://github.com/tesaunders/r-scraping-tutorial).
+
+## Scraping vs APIs
+
+There are two main ways of collecting data from the web:
+
+::: {.incremental}
+1. Application Programming Interfaces (APIs), when available, are preferred, because the data is structured nicely and queries are standardised.
+:::
+
+::: {.incremental}
+2. Scraping is necessary when APIs are not available, but there are some caveats.
+:::
+
+## Legal Stuff
+
+Web scraping occupies a complex legal space:
+
+::: {.incremental}
+- Website terms of service
+- Copyright law
+- Privacy laws
+- Different jurisdictions
+:::
+
+I'm not a lawyer - use at your own risk, use common sense, and be [polite](https://dmi3kno.github.io/polite/).
+
+## Understanding HTML
+
+```
+<html>
+<head>
+  <title>Page title</title>
+</head>
+<body>
+  <h1 id='first'>A heading</h1>
+  <p>Some text &amp; <b>some bold text.</b></p>
+  <img src='myimg.png' width='100' height='100'>
+</body>
+```
+- Web pages are written in HTML and have a hierarchical structure.
+- Most pages containing data generally have a consistent structure.
+- HTML elements have a start tag, optional attributes, an end tag, and contents.
+
+## Understanding CSS
+
+- Cascading Style Sheets define the visual styling of HTML documents. 
+- CSS selectors define patterns for locating HTML elements, and are useful for scraping.
+
+To extract data of interest with {rvest}, find the relevant CSS selectors first.
+- Right click on an element on the page and click Inspect (Firefox, Chrome, etc). 
+- This opens the complete HTML page, centered on the element that you just clicked. 
+- Explore the page and get a sense of what selectors might work. 
+- Pay attention to the class and id attributes
+
+*Example*: Wikipedia
+
+## Scraping in R
+
+{rvest}: A Tidyverse package for webscraping.
+
+## Version Control
+
+Using a version control system is good practice when developing software (code). It also means you can collaborate with others and you'll have access to some cool automation tools.
+
+Git is a popular version control system, installed locally on your machine.
+
+- Tracks changes to files in a repository by comparing differences.
+- Updated files are 'committed' to the repository.
+- Commits are like snapshots in time of the files in the repository.
+- Commits can be rolled back easily.
+
+## Remote Repositories
+
+- GitHub hosts remote repositories (a mirror of your local repository in the cloud).
+- Commits are 'pushed' from local up to remote, or 'pulled' from remote down to local repositories.
+- GitHub Actions (automations) are run on the remote repository.
+
+## GitHub Actions
+
+[GitHub Actions](https://docs.github.com/en/actions/about-github-actions/understanding-github-actions) allow you to automate a task based on a trigger event.
+
+For example, researchers can automatically (re)scrape data over time, automatically.
+
+A *GitHub Actions workflow* is triggered when an *event* occurs in the remote repository. This causes one or more *jobs* to be run, and each job is made up of one or more *steps*.
+
+A GHA workflow is defined inside a special file which always sits in the `.github/workflows` directory. 
+
+## GitHub Actions: Events & Jobs
+
+Common events that trigger a workflow include:
+
+- A particular schedule (e.g. run once a month)
+- When a commit is pushed to a remote repository
+- When someone comments on the repository to outline an issue that needs fixing
+
+Common steps making up jobs include:
+
+- Run a script
+- Build or update a website
+- Perform tests on changed files to ensure code is valid
+
+# Our Example: What Are The Files?
+
+This repository contains two R scripts: the first scrapes a table from Wikipedia, and the other one scrapes some data from the Internet Movie Database, saves the result in a .csv file, and runs once a month via a GitHub Action.
+
+`scrape-wikipedia.r` & `scrape-imdb.R`= R scripts to scrape data from IMDb and Wikipedia.
+
+`/data` = folder where data will be saved.
+
+`docs` = folder where these slides are published from.
+
+## Our Example: What Are The Files?
+
+It also contains a GitHub Action defined here:
+
+`/.github/workflows/update.yml`
+
+YAML files contain key:value pairs. You can call the YAML file anything, but the content and structure of the file needs to adhere to a particular [format](https://docs.github.com/en/actions/writing-workflows/workflow-syntax-for-github-actions). 
+
+## Our Example: What Are The Files?
+
+`slides.qmd` = code version of these slides.
+
+`.gitignore` = file created by Git defining which files should be excluded from version control.
+
+`r-scraping-tutorial.Rproj` = RStudio project file.
+
+## Resources
+
+[Workshop materials](https://github.com/tesaunders/r-scraping-tutorial)
+[R for Data Science](https://r4ds.hadley.nz/webscraping.html)
+[Beginner git lesson](https://uoa-eresearch.github.io/git-novice/) 
+[Happy Git With R](https://happygitwithr.com/)
+[rvest](https://rvest.tidyverse.org/)
+
+
+## Where Do I Start?
+
+1. Set up a [GitHub repository and RStudio project](https://happygitwithr.com/new-github-first).
+1. Write an R script to scrape something using [rvest](https://rvest.tidyverse.org/).
+1. Create a [GitHub Action](https://rfortherestofus.com/2023/05/github-actions) to automate the scraping based on your chosen frequency.
+
+
+
+
+
+
+
+
+

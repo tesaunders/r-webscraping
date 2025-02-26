@@ -1,6 +1,5 @@
 library(rvest)
 library(dplyr)
-library(tidyr)
 library(purrr)
 library(stringr)
 
@@ -26,7 +25,11 @@ pm_list <- pm_list |>
     born = str_extract_all(name, "\\([0-9]{4}"),
     died = str_extract_all(name, "[0-9]{4}\\)")
   )
-  
+
+pm_list$born <- str_remove_all(pm_list$born, "\\(|\\)")
+pm_list$died <- str_remove_all(pm_list$died, "\\(|\\)")
+
+
 pm_list$name <- str_remove_all(pm_list$name, c("The Honourable|The Right Honourable|
                                                MP.*|KC.*|GC.*|Counc.*|MC.*|
                                                CH.*|Bt.*|CH.*|KG.*|GB.*|JP.*|
