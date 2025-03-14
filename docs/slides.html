@@ -442,7 +442,7 @@
   <meta name="generator" content="quarto-1.6.40">
 
   <meta name="author" content="Tom Saunders">
-  <title>An Introduction to Scraping Data From the Web with R</title>
+  <title>Scraping Data From the Web with R</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -986,7 +986,7 @@ margin-right: 0; }
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">An Introduction to Scraping Data From the Web with R</h1>
+  <h1 class="title">Scraping Data From the Web with R</h1>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -1016,8 +1016,19 @@ Tom Saunders
 </div>
 <div>
 <ol start="2" type="1">
-<li class="fragment">Scraping is necessary when APIs are not available, but some websites prohibit scraping in their terms of service.</li>
+<li class="fragment">Scraping is necessary when APIs are not available, but there are some caveats.</li>
 </ol>
+</div>
+</section>
+<section id="limitations" class="slide level2">
+<h2>Limitations</h2>
+<div>
+<ul>
+<li class="fragment">Complex pages don’t have tables ‘baked in’ to them - these will be invisible to R.</li>
+<li class="fragment">If the page structure or code changes the scraper will no longer work.</li>
+<li class="fragment">Some websites will prevent scrapers from working.</li>
+<li class="fragment">Scraping can be legally fraught.</li>
+</ul>
 </div>
 </section>
 <section id="legal-stuff" class="slide level2">
@@ -1030,9 +1041,8 @@ Tom Saunders
 <li class="fragment">Privacy laws</li>
 <li class="fragment">Different jurisdictions</li>
 </ul>
+<p>I’m not a lawyer - use at your own risk, use common sense, and be <a href="https://dmi3kno.github.io/polite/">polite</a>.</p>
 </div>
-<p>I’m not a lawyer - use at your own risk.</p>
-<p>Use common sense, and be <a href="https://dmi3kno.github.io/polite/">polite</a>.</p>
 </section>
 <section id="understanding-html" class="slide level2">
 <h2>Understanding HTML</h2>
@@ -1046,7 +1056,8 @@ Tom Saunders
   &lt;img src=&#39;myimg.png&#39; width=&#39;100&#39; height=&#39;100&#39;&gt;
 &lt;/body&gt;</code></pre>
 <ul>
-<li>Most pages containing data generally have a consistent, hierarchical structure.</li>
+<li>Web pages are written in HTML and have a hierarchical structure.</li>
+<li>Most pages containing data generally have a consistent structure.</li>
 <li>HTML elements have a start tag, optional attributes, an end tag, and contents.</li>
 </ul>
 </section>
@@ -1061,25 +1072,7 @@ Tom Saunders
 <section id="scraping-in-r" class="slide level2">
 <h2>Scraping in R</h2>
 <p>{rvest}: A Tidyverse package for webscraping.</p>
-</section>
-<section id="version-control" class="slide level2">
-<h2>Version Control</h2>
-<p>Using a version control system is good practice when developing software (code). It also means you can collaborate with others and you’ll have access to some cool automation tools.</p>
-<p>Git is a popular version control system, installed locally on your machine.</p>
-<ul>
-<li>Tracks changes to files in a repository by comparing differences.</li>
-<li>Updated files are ‘committed’ to the repository.</li>
-<li>Commits are like snapshots in time of the files in the repository.</li>
-<li>Commits can be rolled back easily.</li>
-</ul>
-</section>
-<section id="remote-repositories" class="slide level2">
-<h2>Remote Repositories</h2>
-<ul>
-<li>GitHub hosts remote repositories (a mirror of your local repository in the cloud).</li>
-<li>Commits are ‘pushed’ from local up to remote, or ‘pulled’ from remote down to local repositories.</li>
-<li>GitHub Actions (automations) are run on the remote repository.</li>
-</ul>
+<p>See the <a href="https://rvest.tidyverse.org/">documentation</a> for a list of functions and more examples.</p>
 </section>
 <section id="github-actions" class="slide level2">
 <h2>GitHub Actions</h2>
@@ -1107,7 +1100,7 @@ Tom Saunders
 <section id="our-example-what-are-the-files" class="title-slide slide level1 center">
 <h1>Our Example: What Are The Files?</h1>
 <p>This repository contains two R scripts: the first scrapes a table from Wikipedia, and the other one scrapes some data from the Internet Movie Database, saves the result in a .csv file, and runs once a month via a GitHub Action.</p>
-<p><code>scrape-wikipedia.r</code> &amp; <code>scrape-imdb.R</code>= R scripts to scrape data from IMDb and Wikipedia.</p>
+<p><code>scrape-wikip.r</code> &amp; <code>scrape-imdb.R</code>= R scripts to scrape data.</p>
 <p><code>/data</code> = folder where data will be saved.</p>
 <p><code>docs</code> = folder where these slides are published from.</p>
 </section>
@@ -1125,15 +1118,14 @@ Tom Saunders
 </section>
 <section id="resources" class="slide level2">
 <h2>Resources</h2>
-<p><a href="https://github.com/tesaunders/r-scraping-tutorial">Workshop materials</a> <a href="https://r4ds.hadley.nz/webscraping.html">R for Data Science</a> <a href="https://uoa-eresearch.github.io/git-novice/">Beginner git lesson</a> <a href="https://happygitwithr.com/">Happy Git With R</a> <a href="https://rvest.tidyverse.org/">rvest</a></p>
-</section>
-<section id="where-do-i-start" class="slide level2">
-<h2>Where Do I Start?</h2>
-<ol type="1">
-<li>Set up a <a href="https://happygitwithr.com/new-github-first">GitHub repository and RStudio project</a>.</li>
-<li>Write an R script to scrape something using <a href="https://rvest.tidyverse.org/">rvest</a>.</li>
-<li>Create a <a href="https://rfortherestofus.com/2023/05/github-actions">GitHub Action</a> to automate the scraping based on your chosen frequency.</li>
-</ol>
+<ul>
+<li><a href="https://github.com/tesaunders/r-scraping-tutorial">Workshop materials</a></li>
+<li><a href="https://r4ds.hadley.nz/webscraping.html">R for Data Science</a></li>
+<li><a href="https://uoa-eresearch.github.io/git-novice/">Beginner git lesson</a></li>
+<li><a href="https://happygitwithr.com/">Happy Git With R</a></li>
+<li><a href="https://rvest.tidyverse.org/">rvest</a></li>
+<li><a href="https://docs.github.com/en/actions/about-github-actions/understanding-github-actions">GitHub Actions</a></li>
+</ul>
 
 
 </section></section>

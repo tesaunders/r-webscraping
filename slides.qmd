@@ -1,5 +1,5 @@
 ---
-title: "An Introduction to Scraping Data From the Web with R"
+title: "Scraping Data From the Web with R"
 author: "Tom Saunders"
 format:
   revealjs:
@@ -25,6 +25,15 @@ There are two main ways of collecting data from the web:
 2. Scraping is necessary when APIs are not available, but there are some caveats.
 :::
 
+## Limitations
+
+::: {.incremental}
+- Complex pages don't have tables 'baked in' to them - these will be invisible to R.
+- If the page structure or code changes the scraper will no longer work.
+- Some websites will prevent scrapers from working.
+- Scraping can be legally fraught.
+:::
+
 ## Legal Stuff
 
 Web scraping occupies a complex legal space:
@@ -34,9 +43,9 @@ Web scraping occupies a complex legal space:
 - Copyright law
 - Privacy laws
 - Different jurisdictions
-:::
 
 I'm not a lawyer - use at your own risk, use common sense, and be [polite](https://dmi3kno.github.io/polite/).
+:::
 
 ## Understanding HTML
 
@@ -66,28 +75,11 @@ To extract data of interest with {rvest}, find the relevant CSS selectors first.
 - Explore the page and get a sense of what selectors might work. 
 - Pay attention to the class and id attributes
 
-*Example*: Wikipedia
-
 ## Scraping in R
 
 {rvest}: A Tidyverse package for webscraping.
 
-## Version Control
-
-Using a version control system is good practice when developing software (code). It also means you can collaborate with others and you'll have access to some cool automation tools.
-
-Git is a popular version control system, installed locally on your machine.
-
-- Tracks changes to files in a repository by comparing differences.
-- Updated files are 'committed' to the repository.
-- Commits are like snapshots in time of the files in the repository.
-- Commits can be rolled back easily.
-
-## Remote Repositories
-
-- GitHub hosts remote repositories (a mirror of your local repository in the cloud).
-- Commits are 'pushed' from local up to remote, or 'pulled' from remote down to local repositories.
-- GitHub Actions (automations) are run on the remote repository.
+See the [documentation](https://rvest.tidyverse.org/) for a list of functions and more examples.
 
 ## GitHub Actions
 
@@ -117,7 +109,7 @@ Common steps making up jobs include:
 
 This repository contains two R scripts: the first scrapes a table from Wikipedia, and the other one scrapes some data from the Internet Movie Database, saves the result in a .csv file, and runs once a month via a GitHub Action.
 
-`scrape-wikipedia.r` & `scrape-imdb.R`= R scripts to scrape data from IMDb and Wikipedia.
+`scrape-wikip.r` & `scrape-imdb.R`= R scripts to scrape data.
 
 `/data` = folder where data will be saved.
 
@@ -141,24 +133,9 @@ YAML files contain key:value pairs. You can call the YAML file anything, but the
 
 ## Resources
 
-[Workshop materials](https://github.com/tesaunders/r-scraping-tutorial)
-[R for Data Science](https://r4ds.hadley.nz/webscraping.html)
-[Beginner git lesson](https://uoa-eresearch.github.io/git-novice/) 
-[Happy Git With R](https://happygitwithr.com/)
-[rvest](https://rvest.tidyverse.org/)
-
-
-## Where Do I Start?
-
-1. Set up a [GitHub repository and RStudio project](https://happygitwithr.com/new-github-first).
-1. Write an R script to scrape something using [rvest](https://rvest.tidyverse.org/).
-1. Create a [GitHub Action](https://rfortherestofus.com/2023/05/github-actions) to automate the scraping based on your chosen frequency.
-
-
-
-
-
-
-
-
-
+- [Workshop materials](https://github.com/tesaunders/r-scraping-tutorial)
+- [R for Data Science](https://r4ds.hadley.nz/webscraping.html)
+- [Beginner git lesson](https://uoa-eresearch.github.io/git-novice/) 
+- [Happy Git With R](https://happygitwithr.com/)
+- [rvest](https://rvest.tidyverse.org/)
+- [GitHub Actions](https://docs.github.com/en/actions/about-github-actions/understanding-github-actions)
