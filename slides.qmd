@@ -11,27 +11,25 @@ format:
 - Audience: Beginner R programmers with no scraping experience.
 - This workshop isn't recorded.
 - Ask questions in chat at any time.
-- All materials are [here](https://github.com/tesaunders/r-scraping-tutorial).
+- Slides are viewable [here](https://tesaunders.github.io/scraping-tutorial/).
+- All materials are [here](https://github.com/tesaunders/scraping-tutorial).
 
 ## Scraping vs APIs
 
-There are two main ways of collecting data from the web:
+There are two main ways to collect tabular data from the web:
 
 ::: {.incremental}
-1. Application Programming Interfaces (APIs), when available, are preferred, because the data is structured nicely and queries are standardised.
-:::
-
-::: {.incremental}
-2. Scraping is necessary when APIs are not available, but there are some caveats.
+1. Application Programming Interfaces (APIs): Software interfaces allowing standardised retrieval of data hosted on a server.
+2. Scraping: Extraction of data directly from webpages via code or specialised software.
 :::
 
 ## Limitations
 
 ::: {.incremental}
 - Complex pages don't have tables 'baked in' to them - these will be invisible to R.
-- If the page structure or code changes the scraper will no longer work.
+- If the page structure or code changes, the scraper will no longer work.
 - Some websites will prevent scrapers from working.
-- Scraping can be legally fraught.
+- Scraping is legally complex.
 :::
 
 ## Legal Stuff
@@ -43,9 +41,11 @@ Web scraping occupies a complex legal space:
 - Copyright law
 - Privacy laws
 - Different jurisdictions
+:::
+
+. . .
 
 I'm not a lawyer - use at your own risk, use common sense, and be [polite](https://dmi3kno.github.io/polite/).
-:::
 
 ## Understanding HTML
 
@@ -60,20 +60,26 @@ I'm not a lawyer - use at your own risk, use common sense, and be [polite](https
   <img src='myimg.png' width='100' height='100'>
 </body>
 ```
+. . .
+
+::: {.incremental}
 - Web pages are written in HTML and have a hierarchical structure.
 - Most pages containing data generally have a consistent structure.
 - HTML elements have a start tag, optional attributes, an end tag, and contents.
+:::
 
 ## Understanding CSS
 
-- Cascading Style Sheets define the visual styling of HTML documents. 
-- CSS selectors define patterns for locating HTML elements, and are useful for scraping.
+Cascading Style Sheets define the visual styling of HTML documents (webpages) and are useful for webscraping.
 
-To extract data of interest with {rvest}, find the relevant CSS selectors first.
+. . .
+
+::: {.incremental}
 - Right click on an element on the page and click Inspect (Firefox, Chrome, etc). 
 - This opens the complete HTML page, centered on the element that you just clicked. 
 - Explore the page and get a sense of what selectors might work. 
 - Pay attention to the class and id attributes
+:::
 
 ## Scraping in R
 
@@ -85,9 +91,15 @@ See the [documentation](https://rvest.tidyverse.org/) for a list of functions an
 
 [GitHub Actions](https://docs.github.com/en/actions/about-github-actions/understanding-github-actions) allow you to automate a task based on a trigger event.
 
+. . .
+
 For example, researchers can automatically (re)scrape data over time, automatically.
 
+. . .
+
 A *GitHub Actions workflow* is triggered when an *event* occurs in the remote repository. This causes one or more *jobs* to be run, and each job is made up of one or more *steps*.
+
+. . .
 
 A GHA workflow is defined inside a special file which always sits in the `.github/workflows` directory. 
 
@@ -97,7 +109,8 @@ Common events that trigger a workflow include:
 
 - A particular schedule (e.g. run once a month)
 - When a commit is pushed to a remote repository
-- When someone comments on the repository to outline an issue that needs fixing
+
+. . .
 
 Common steps making up jobs include:
 
@@ -105,15 +118,17 @@ Common steps making up jobs include:
 - Build or update a website
 - Perform tests on changed files to ensure code is valid
 
-# Our Example: What Are The Files?
+## Our Example: What Are The Files?
 
-This repository contains two R scripts: the first scrapes a table from Wikipedia, and the other one scrapes some data from the Internet Movie Database, saves the result in a .csv file, and runs once a month via a GitHub Action.
+R scripts: 
 
-`scrape-wikip.r` & `scrape-imdb.R`= R scripts to scrape data.
+- `scrape-wiki.R`: scrape tables from Wikipedia.
+- `scrape-carjam.R`: scrape tables from multiple pages of results.
+- `scrape-imdb.R`: scrape table once a week via GitHub Actions.
 
 `/data` = folder where data will be saved.
 
-`docs` = folder where these slides are published from.
+`/docs` = folder where these slides are published from.
 
 ## Our Example: What Are The Files?
 
