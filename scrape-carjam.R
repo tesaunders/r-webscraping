@@ -30,7 +30,8 @@ vehicle_fleet <- map(urls, scrape_carjam)
 
 # Bind rows together
 
-vehicle_fleet <- vehicle_fleet |> 
+vehicle_fleet <- 
+  vehicle_fleet |> 
   bind_rows()
 
 # Parse count as numeric

@@ -32,14 +32,21 @@
     "href": "slides.html#understanding-html",
     "title": "Scraping Data From the Web with R",
     "section": "Understanding HTML",
-    "text": "Understanding HTML\n&lt;html&gt;\n&lt;head&gt;\n  &lt;title&gt;Page title&lt;/title&gt;\n&lt;/head&gt;\n&lt;body&gt;\n  &lt;h1 id='first'&gt;A heading&lt;/h1&gt;\n  &lt;p&gt;Some text &amp; &lt;b&gt;some bold text.&lt;/b&gt;&lt;/p&gt;\n  &lt;img src='myimg.png' width='100' height='100'&gt;\n&lt;/body&gt;\n\nWeb pages are written in HTML and have a hierarchical structure.\nMost pages containing data generally have a consistent structure.\nHTML elements have a start tag, optional attributes, an end tag, and contents."
+    "text": "Understanding HTML\n&lt;html&gt;\n&lt;head&gt;\n  &lt;title&gt;Page title&lt;/title&gt;\n&lt;/head&gt;\n&lt;body&gt;\n  &lt;h1 id='first'&gt;A heading&lt;/h1&gt;\n  &lt;p&gt;Some text &amp; &lt;b&gt;some bold text.&lt;/b&gt;&lt;/p&gt;\n  &lt;img src='myimg.png' width='100' height='100'&gt;\n&lt;/body&gt;\n\nWeb pages are written in HTML and have a hierarchical structure.\nHTML elements have a start tag, optional attributes, an end tag, and contents."
   },
   {
     "objectID": "slides.html#understanding-css",
     "href": "slides.html#understanding-css",
     "title": "Scraping Data From the Web with R",
     "section": "Understanding CSS",
-    "text": "Understanding CSS\n\nCascading Style Sheets define the visual styling of HTML documents.\nCSS selectors define patterns for locating HTML elements, and are useful for scraping.\n\nTo extract data of interest with {rvest}, find the relevant CSS selectors first. - Right click on an element on the page and click Inspect (Firefox, Chrome, etc). - This opens the complete HTML page, centered on the element that you just clicked. - Explore the page and get a sense of what selectors might work. - Pay attention to the class and id attributes"
+    "text": "Understanding CSS\nbody {\n  background-color: powderblue;\n}\nh1 {\n  color: blue;\n}\np {\n  color: red;\n}\n\nCascading Style Sheets define the visual styling of HTML documents.\nCSS selectors are useful for scraping."
+  },
+  {
+    "objectID": "slides.html#extracting-data",
+    "href": "slides.html#extracting-data",
+    "title": "Scraping Data From the Web with R",
+    "section": "Extracting Data",
+    "text": "Extracting Data\nTo extract data of interest find the relevant CSS selectors first.\n\nRight click on an element on the page and click Inspect (Firefox, Chrome, etc).\nThis opens the complete HTML page, centered on the element that you just clicked.\nExplore the page and get a sense of what selectors might work.\nPay attention to the class and id attributes"
   },
   {
     "objectID": "slides.html#scraping-in-r",
@@ -61,6 +68,13 @@
     "title": "Scraping Data From the Web with R",
     "section": "GitHub Actions: Events & Jobs",
     "text": "GitHub Actions: Events & Jobs\nCommon events that trigger a workflow include:\n\nA particular schedule (e.g. run once a month)\nWhen a commit is pushed to a remote repository\nWhen someone comments on the repository to outline an issue that needs fixing\n\nCommon steps making up jobs include:\n\nRun a script\nBuild or update a website\nPerform tests on changed files to ensure code is valid"
+  },
+  {
+    "objectID": "slides.html#our-example-what-are-the-files",
+    "href": "slides.html#our-example-what-are-the-files",
+    "title": "Scraping Data From the Web with R",
+    "section": "Our Example: What Are The Files?",
+    "text": "Our Example: What Are The Files?\nThis repository contains three R scripts:\n\nscrape-wiki.r: Scrapes tables from Wikipedia and joins them together.\nscrape-carjam: Scrapes tables from multiple pages of results.\nscrape-imdb.R: Scrapes a table and saves as a .csv, once per week, automatically.\n\n/data = folder where data will be saved.\n/docs = folder where these slides are published from."
   },
   {
     "objectID": "slides.html#our-example-what-are-the-files-1",

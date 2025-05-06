@@ -61,15 +61,29 @@ I'm not a lawyer - use at your own risk, use common sense, and be [polite](https
 </body>
 ```
 - Web pages are written in HTML and have a hierarchical structure.
-- Most pages containing data generally have a consistent structure.
 - HTML elements have a start tag, optional attributes, an end tag, and contents.
 
 ## Understanding CSS
 
-- Cascading Style Sheets define the visual styling of HTML documents. 
-- CSS selectors define patterns for locating HTML elements, and are useful for scraping.
+```
+body {
+  background-color: powderblue;
+}
+h1 {
+  color: blue;
+}
+p {
+  color: red;
+}
+```
 
-To extract data of interest with {rvest}, find the relevant CSS selectors first.
+- Cascading Style Sheets define the visual styling of HTML documents. 
+- CSS selectors are useful for scraping.
+
+## Extracting Data
+
+To extract data of interest find the relevant CSS selectors first.
+
 - Right click on an element on the page and click Inspect (Firefox, Chrome, etc). 
 - This opens the complete HTML page, centered on the element that you just clicked. 
 - Explore the page and get a sense of what selectors might work. 
@@ -105,15 +119,17 @@ Common steps making up jobs include:
 - Build or update a website
 - Perform tests on changed files to ensure code is valid
 
-# Our Example: What Are The Files?
+## Our Example: What Are The Files?
 
-This repository contains two R scripts: the first scrapes a table from Wikipedia, and the other one scrapes some data from the Internet Movie Database, saves the result in a .csv file, and runs once a month via a GitHub Action.
+This repository contains three R scripts: 
 
-`scrape-wikip.r` & `scrape-imdb.R`= R scripts to scrape data.
+- `scrape-wiki.r`: Scrapes tables from Wikipedia and joins them together.
+- `scrape-carjam`: Scrapes tables from multiple pages of results.
+- `scrape-imdb.R`: Scrapes a table and saves as a .csv, once per week, automatically.
 
 `/data` = folder where data will be saved.
 
-`docs` = folder where these slides are published from.
+`/docs` = folder where these slides are published from.
 
 ## Our Example: What Are The Files?
 
