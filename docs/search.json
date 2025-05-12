@@ -39,7 +39,14 @@
     "href": "slides.html#css",
     "title": "Scraping Data From the Web with R",
     "section": "CSS",
-    "text": "CSS\nCascading Style Sheets define the visual styling of HTML documents (webpages) and are useful for webscraping.\n\n\nRight click on an element on the page and click Inspect (Firefox, Chrome, etc).\nThis opens the underlying HTML & CSS code, centered on the element that you just clicked.\nExplore the page and get a sense of what selectors might work.\nPay attention to the class and id attributes."
+    "text": "CSS\nCascading Style Sheets define the visual styling of HTML documents (webpages) and are useful for webscraping.\n\nbody {\n  background-color: powderblue;\n}\nh1 {\n  color: blue;\n}\np {\n  color: red;\n}"
+  },
+  {
+    "objectID": "slides.html#extracting-data",
+    "href": "slides.html#extracting-data",
+    "title": "Scraping Data From the Web with R",
+    "section": "Extracting Data",
+    "text": "Extracting Data\nTo extract data of interest find the relevant CSS selectors first.\n\nRight click on an element on the page and click Inspect (Firefox, Chrome, etc).\nThis opens the underlying HTML & CSS code, centered on the element that you just clicked.\nExplore the page and get a sense of what selectors might work.\nPay attention to the class and id attributes."
   },
   {
     "objectID": "slides.html#github-actions",
@@ -60,7 +67,7 @@
     "href": "slides.html#what-are-the-files",
     "title": "Scraping Data From the Web with R",
     "section": "What Are The Files?",
-    "text": "What Are The Files?\nR scripts:\n\nscrape-wiki.R: scrape tables from Wikipedia.\nscrape-carjam.R: scrape tables from multiple pages of results.\nscrape-imdb.R: scrape table once a week via GitHub Actions.\n\n\nFolders\n\n/data: folder where data will be saved.\n/docs: folder where these slides are published from."
+    "text": "What Are The Files?\nR scripts:\n\nscrape-wiki.r: Scrapes tables from Wikipedia and joins them together.\nscrape-carjam: Scrapes tables from multiple pages of results.\nscrape-imdb.R: Scrapes a table and saves as a .csv, once per week, automatically.\n\n\nFolders\n\n/data: folder where data will be saved.\n/docs: folder where these slides are published from."
   },
   {
     "objectID": "slides.html#what-are-the-files-1",

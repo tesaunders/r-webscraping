@@ -31,7 +31,7 @@ electricity$consumption_twh <-
 
 html_incarceration <- read_html("https://en.wikipedia.org/wiki/List_of_countries_by_incarceration_rate")
 
-# Convert to a table, drop 'Number', and rename column
+# Convert to a table, drop 'Number', rename column, make rate a numeric column
 
 incarceration <-
   html_incarceration |> 
@@ -40,12 +40,11 @@ incarceration <-
   select(-Number) |> 
   rename(incarceration_rate = Rates)
 
+incarceration$incarceration_rate <- as.numeric(incarceration$incarceration_rate)
+
 # Join the two tables based on country name
 
 final_table <-
   left_join(x = electricity, 
             y = incarceration,
             by = join_by(location == Location))
-
-
-

@@ -71,6 +71,22 @@ Cascading Style Sheets define the visual styling of HTML documents (webpages) an
 
 . . .
 
+```
+body {
+  background-color: powderblue;
+}
+h1 {
+  color: blue;
+}
+p {
+  color: red;
+}
+```
+
+## Extracting Data
+
+To extract data of interest find the relevant CSS selectors first.
+
 - Right click on an element on the page and click Inspect (Firefox, Chrome, etc). 
 - This opens the underlying HTML & CSS code, centered on the element that you just clicked. 
 - Explore the page and get a sense of what selectors might work. 
@@ -111,9 +127,9 @@ Common steps making up jobs include:
 
 R scripts: 
 
-- `scrape-wiki.R`: scrape tables from Wikipedia.
-- `scrape-carjam.R`: scrape tables from multiple pages of results.
-- `scrape-imdb.R`: scrape table once a week via GitHub Actions.
+- `scrape-wiki.r`: Scrapes tables from Wikipedia and joins them together.
+- `scrape-carjam`: Scrapes tables from multiple pages of results.
+- `scrape-imdb.R`: Scrapes a table and saves as a .csv, once per week, automatically.
 
 . . .
 
