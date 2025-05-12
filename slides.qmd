@@ -1,12 +1,18 @@
 ---
 title: "Scraping Data From the Web with R"
-author: "Tom Saunders"
+author: "Tom Saunders · Centre for eResearch"
 format:
   revealjs:
+    theme: dark
     embed-resources: true
+    incremental: true
+title-slide-attributes: 
+  data-background-image: "assets/uoa.png"
+  data-background-size: 30%
+  data-background-position: 2% 2%
 ---
 
-## Housekeeping
+## Housekeeping {header=false}
 
 - Audience: Beginner R programmers with no scraping experience.
 - This workshop isn't recorded.
@@ -18,36 +24,30 @@ format:
 
 There are two main ways to collect tabular data from the web:
 
-::: {.incremental}
 1. Application Programming Interfaces (APIs): Software interfaces allowing standardised retrieval of data hosted on a server.
 2. Scraping: Extraction of data directly from webpages via code or specialised software.
-:::
 
 ## Limitations
 
-::: {.incremental}
 - Complex pages don't have tables 'baked in' to them - these will be invisible to R.
 - If the page structure or code changes, the scraper will no longer work.
 - Some websites will prevent scrapers from working.
 - Scraping is legally complex.
-:::
 
 ## Legal Stuff
 
 Web scraping occupies a complex legal space:
 
-::: {.incremental}
 - Website terms of service
 - Copyright law
 - Privacy laws
 - Different jurisdictions
-:::
 
 . . .
 
 I'm not a lawyer - use at your own risk, use common sense, and be [polite](https://dmi3kno.github.io/polite/).
 
-## Understanding HTML
+## HTML
 
 ```
 <html>
@@ -62,30 +62,19 @@ I'm not a lawyer - use at your own risk, use common sense, and be [polite](https
 ```
 . . .
 
-::: {.incremental}
-- Web pages are written in HTML and have a hierarchical structure.
-- Most pages containing data generally have a consistent structure.
+- Web pages are written in HTML and have a consistent, hierarchical structure.
 - HTML elements have a start tag, optional attributes, an end tag, and contents.
-:::
 
-## Understanding CSS
+## CSS
 
 Cascading Style Sheets define the visual styling of HTML documents (webpages) and are useful for webscraping.
 
 . . .
 
-::: {.incremental}
 - Right click on an element on the page and click Inspect (Firefox, Chrome, etc). 
-- This opens the complete HTML page, centered on the element that you just clicked. 
+- This opens the underlying HTML & CSS code, centered on the element that you just clicked. 
 - Explore the page and get a sense of what selectors might work. 
-- Pay attention to the class and id attributes
-:::
-
-## Scraping in R
-
-{rvest}: A Tidyverse package for webscraping.
-
-See the [documentation](https://rvest.tidyverse.org/) for a list of functions and more examples.
+- Pay attention to the class and id attributes.
 
 ## GitHub Actions
 
@@ -118,7 +107,7 @@ Common steps making up jobs include:
 - Build or update a website
 - Perform tests on changed files to ensure code is valid
 
-## Our Example: What Are The Files?
+## What Are The Files?
 
 R scripts: 
 
@@ -126,11 +115,14 @@ R scripts:
 - `scrape-carjam.R`: scrape tables from multiple pages of results.
 - `scrape-imdb.R`: scrape table once a week via GitHub Actions.
 
-`/data` = folder where data will be saved.
+. . .
 
-`/docs` = folder where these slides are published from.
+Folders 
 
-## Our Example: What Are The Files?
+- `/data`: folder where data will be saved.
+- `/docs`: folder where these slides are published from.
+
+## What Are The Files?
 
 It also contains a GitHub Action defined here:
 
@@ -138,19 +130,18 @@ It also contains a GitHub Action defined here:
 
 YAML files contain key:value pairs. You can call the YAML file anything, but the content and structure of the file needs to adhere to a particular [format](https://docs.github.com/en/actions/writing-workflows/workflow-syntax-for-github-actions). 
 
-## Our Example: What Are The Files?
+## What Are The Files?
 
-`slides.qmd` = code version of these slides.
-
-`.gitignore` = file created by Git defining which files should be excluded from version control.
-
-`r-scraping-tutorial.Rproj` = RStudio project file.
+- `slides.qmd`: code version of these slides.
+- `/assets`: image for title slide.
+- `.gitignore`: file created by Git defining which files should be excluded from version control.
+- `r-scraping-tutorial.Rproj`: RStudio project file.
 
 ## Resources
 
 - [Workshop materials](https://github.com/tesaunders/r-scraping-tutorial)
-- [R for Data Science](https://r4ds.hadley.nz/webscraping.html)
-- [Beginner git lesson](https://uoa-eresearch.github.io/git-novice/) 
-- [Happy Git With R](https://happygitwithr.com/)
-- [rvest](https://rvest.tidyverse.org/)
+- [R for Data Science](https://r4ds.hadley.nz/webscraping.html): Go here next.
+- [Beginner git lesson](https://uoa-eresearch.github.io/git-novice/): Go here to learn about version control.
+- [Happy Git With R](https://happygitwithr.com/): Go here to learn how to use Git/GitHub with RStudio.
+- [rvest](https://rvest.tidyverse.org/): R package for webscraping.
 - [GitHub Actions](https://docs.github.com/en/actions/about-github-actions/understanding-github-actions)
