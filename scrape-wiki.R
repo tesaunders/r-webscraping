@@ -12,7 +12,7 @@ html_electricity <- read_html("https://en.wikipedia.org/wiki/List_of_countries_b
 
 electricity <-
   html_electricity |> 
-  html_element("table.wikitable") |> 
+  html_element(".wikitable") |> 
   html_table() |> 
   rename(
     location = "Location",
@@ -35,7 +35,7 @@ html_incarceration <- read_html("https://en.wikipedia.org/wiki/List_of_countries
 
 incarceration <-
   html_incarceration |> 
-  html_element("table.wikitable") |> 
+  html_element(".wikitable") |> 
   html_table() |> 
   select(-Number) |> 
   rename(incarceration_rate = Rates)

@@ -25,7 +25,7 @@ top_metadata <-
   html_elements(".cli-title-metadata-item") |> 
   html_text()
 
-# Use regular expressions to subset combined data
+# Use regular expressions to extract year and episodes from top_metadata
 
 top_year <- 
   top_metadata |> 

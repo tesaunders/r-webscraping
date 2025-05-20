@@ -98,7 +98,7 @@ To extract data of interest find the relevant CSS selectors first.
 
 . . .
 
-For example, researchers can automatically (re)scrape data over time, automatically.
+For example, researchers can (re)scrape data over time, automatically.
 
 . . .
 

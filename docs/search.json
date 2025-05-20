@@ -53,7 +53,7 @@
     "href": "slides.html#github-actions",
     "title": "Scraping Data From the Web with R",
     "section": "GitHub Actions",
-    "text": "GitHub Actions\nGitHub Actions allow you to automate a task based on a trigger event.\n\nFor example, researchers can automatically (re)scrape data over time, automatically.\n\n\nA GitHub Actions workflow is triggered when an event occurs in the remote repository. This causes one or more jobs to be run, and each job is made up of one or more steps.\n\n\nA GHA workflow is defined inside a special file which always sits in the .github/workflows directory."
+    "text": "GitHub Actions\nGitHub Actions allow you to automate a task based on a trigger event.\n\nFor example, researchers can (re)scrape data over time, automatically.\n\n\nA GitHub Actions workflow is triggered when an event occurs in the remote repository. This causes one or more jobs to be run, and each job is made up of one or more steps.\n\n\nA GHA workflow is defined inside a special file which always sits in the .github/workflows directory."
   },
   {
     "objectID": "slides.html#github-actions-events-jobs",
