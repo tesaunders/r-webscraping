@@ -49,6 +49,13 @@
     "text": "Extracting Data\nTo extract data of interest find the relevant CSS selectors first.\n\nRight click on an element on the page and click Inspect (Firefox, Chrome, etc).\nThis opens the underlying HTML & CSS code, centered on the element that you just clicked.\nExplore the page and get a sense of what selectors might work.\nPay attention to the class and id attributes."
   },
   {
+    "objectID": "slides.html#lets-take-a-look",
+    "href": "slides.html#lets-take-a-look",
+    "title": "Scraping Data From the Web with R",
+    "section": "Let’s take a look!",
+    "text": "Let’s take a look!"
+  },
+  {
     "objectID": "slides.html#github-actions",
     "href": "slides.html#github-actions",
     "title": "Scraping Data From the Web with R",

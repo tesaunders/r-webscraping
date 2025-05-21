@@ -14,14 +14,14 @@ top_tv <-
 
 top_tv$date <- ymd(top_tv$date)
 
-
 # Plot top 3 titles at start of data collection ---------------------------
 
 top_tv |> 
   filter(title %in% c("American Primeval", "Landman", "Severance")) |> 
   ggplot(aes(x = date, y = position, colour = title)) +
   geom_line() +
-  theme_bw()
+  theme_bw() +
+  scale_y_reverse()
 
 # How many weeks of data do we have?
 
@@ -67,5 +67,3 @@ pop_tv <-
   mutate(
     diff = pos_start - pos_end
   )
-
-

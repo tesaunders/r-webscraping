@@ -8,7 +8,7 @@ format:
     incremental: true
 title-slide-attributes: 
   data-background-image: "assets/uoa.png"
-  data-background-size: 30%
+  data-background-size: 25%
   data-background-position: 2% 2%
 ---
 
@@ -91,6 +91,8 @@ To extract data of interest find the relevant CSS selectors first.
 - This opens the underlying HTML & CSS code, centered on the element that you just clicked. 
 - Explore the page and get a sense of what selectors might work. 
 - Pay attention to the class and id attributes.
+
+## Let's take a look!
 
 ## GitHub Actions
 
