@@ -1,3 +1,5 @@
+# Load packages
+
 library(rvest)
 library(glue)
 library(purrr)
@@ -5,14 +7,14 @@ library(dplyr)
 library(readr)
 
 # Define URLs based on a pattern
-# https://www.carjam.co.nz/nz-fleet/?l=20&of=0
+# Our example: https://www.carjam.co.nz/nz-fleet/?l=20&of=0
 # l = number of results per page, of = offset
 
 urls <- glue("https://www.carjam.co.nz/nz-fleet/?l=20&of={seq(from = 0, to = 100, by = 20)}")
 
 # Test with a single page
 
-read_html("https://www.carjam.co.nz/nz-fleet/?l=20&of=0") |> 
+read_html(urls[1]) |> 
   html_element(".table") |> 
   html_table()
 

@@ -8,7 +8,7 @@ library(dplyr)
 
 html_imdb <- read_html("https://www.imdb.com/chart/tvmeter/")
 
-# Use CSS selectors to select relevant data
+# Use CSS selectors to select title, type, and 'metadata' 
 
 top_title <- 
   html_imdb |> 
@@ -25,7 +25,7 @@ top_metadata <-
   html_elements(".cli-title-metadata-item") |> 
   html_text()
 
-# Use regular expressions to extract year and episodes from top_metadata
+# Use regular expressions to extract year and episodes from metadata
 
 top_year <- 
   top_metadata |> 

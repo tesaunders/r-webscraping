@@ -4,7 +4,7 @@ library(rvest)
 library(dplyr)
 library(readr)
 
-# Read in electricity table from wikipedia
+# Read in page with electricity table from wikipedia
 
 html_electricity <- read_html("https://en.wikipedia.org/wiki/List_of_countries_by_electricity_consumption")
 
@@ -27,7 +27,7 @@ electricity <-
 electricity$consumption_twh <-
   parse_number(electricity$consumption_twh)
 
-# Read in another table - incarceration rates from Wikipedia
+# Read in another page with a different table - incarceration rates from Wikipedia
 
 html_incarceration <- read_html("https://en.wikipedia.org/wiki/List_of_countries_by_incarceration_rate")
 
