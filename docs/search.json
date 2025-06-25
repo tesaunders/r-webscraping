@@ -7,11 +7,11 @@
     "text": "Housekeeping\n\nAudience: Beginner R programmers with no scraping experience.\nThis workshop isn’t recorded.\nAsk questions in chat at any time.\nSlides are viewable here.\nAll materials are here."
   },
   {
-    "objectID": "slides.html#scraping-vs-apis",
-    "href": "slides.html#scraping-vs-apis",
+    "objectID": "slides.html#getting-data-from-the-web",
+    "href": "slides.html#getting-data-from-the-web",
     "title": "Scraping Data From the Web with R",
-    "section": "Scraping vs APIs",
-    "text": "Scraping vs APIs\nThere are two main ways to collect tabular data from the web:\n\nApplication Programming Interfaces (APIs): Software interfaces allowing standardised retrieval of data hosted on a server.\nScraping: Extraction of data directly from webpages via code or specialised software."
+    "section": "Getting Data from the Web",
+    "text": "Getting Data from the Web\nThere are two main ways to collect tabular data from the web:\n\n\n1. Application Programming Interfaces (APIs)\nSoftware interfaces allowing standardised retrieval of data hosted on a server.\n\n2. Webscraping\nExtraction of data directly from webpages via code or specialised software."
   },
   {
     "objectID": "slides.html#limitations",
@@ -32,7 +32,7 @@
     "href": "slides.html#html",
     "title": "Scraping Data From the Web with R",
     "section": "HTML",
-    "text": "HTML\n&lt;html&gt;\n&lt;head&gt;\n  &lt;title&gt;Page title&lt;/title&gt;\n&lt;/head&gt;\n&lt;body&gt;\n  &lt;h1 id='first'&gt;A heading&lt;/h1&gt;\n  &lt;p&gt;Some text &amp; &lt;b&gt;some bold text.&lt;/b&gt;&lt;/p&gt;\n  &lt;img src='myimg.png' width='100' height='100'&gt;\n&lt;/body&gt;\n\n\nWeb pages are written in HTML and have a consistent, hierarchical structure.\nHTML elements have a start tag, optional attributes, an end tag, and contents."
+    "text": "HTML\n&lt;html&gt;\n&lt;head&gt;\n  &lt;title&gt;Page title&lt;/title&gt;\n&lt;/head&gt;\n&lt;body&gt;\n  &lt;h1 id='first'&gt;A heading&lt;/h1&gt;\n  &lt;p&gt;Some text &amp; &lt;b&gt;some bold text.&lt;/b&gt;&lt;/p&gt;\n  &lt;img src='myimg.png' width='100' height='100'&gt;\n&lt;/body&gt;\n\nWeb pages are written in HTML and have a consistent, hierarchical structure.\nHTML elements have a start tag, optional attributes, an end tag, and contents."
   },
   {
     "objectID": "slides.html#css",

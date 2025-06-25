@@ -20,12 +20,25 @@ title-slide-attributes:
 - Slides are viewable [here](https://tesaunders.github.io/scraping-tutorial/).
 - All materials are [here](https://github.com/tesaunders/scraping-tutorial).
 
-## Scraping vs APIs
+## Getting Data from the Web
 
 There are two main ways to collect tabular data from the web:
 
-1. Application Programming Interfaces (APIs): Software interfaces allowing standardised retrieval of data hosted on a server.
-2. Scraping: Extraction of data directly from webpages via code or specialised software.
+:::: {.columns}
+
+::: {.column width="50%"}
+### 1. Application Programming Interfaces (APIs)
+
+Software interfaces allowing standardised retrieval of data hosted on a server.
+:::
+
+::: {.column width="50%}
+### 2. Webscraping
+
+Extraction of data directly from webpages via code or specialised software.
+:::
+
+::::
 
 ## Limitations
 
@@ -60,8 +73,6 @@ I'm not a lawyer - use at your own risk, use common sense, and be [polite](https
   <img src='myimg.png' width='100' height='100'>
 </body>
 ```
-. . .
-
 - Web pages are written in HTML and have a consistent, hierarchical structure.
 - HTML elements have a start tag, optional attributes, an end tag, and contents.
 
