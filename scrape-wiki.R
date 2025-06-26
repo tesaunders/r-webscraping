@@ -4,7 +4,7 @@ library(rvest)
 library(dplyr)
 library(readr)
 
-# Read in page with electricity table from wikipedia
+# Read in Wikipedia page
 
 html_electricity <- read_html("https://en.wikipedia.org/wiki/List_of_countries_by_electricity_consumption")
 

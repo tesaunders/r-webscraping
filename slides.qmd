@@ -103,6 +103,14 @@ To extract data of interest find the relevant CSS selectors first.
 - Explore the page and get a sense of what selectors might work. 
 - Pay attention to the class and id attributes.
 
+## 3 Examples
+
+1. Wikipedia: Scraping a table from a page.
+
+1. Carjam: Scraping paginated results by establishing patterns in the URLs.
+
+1. IMDB: Scraping a trickier table & automating it once a week.
+
 ## Let's take a look!
 
 ## GitHub Actions

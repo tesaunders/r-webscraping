@@ -49,6 +49,13 @@
     "text": "Extracting Data\nTo extract data of interest find the relevant CSS selectors first.\n\nRight click on an element on the page and click Inspect (Firefox, Chrome, etc).\nThis opens the underlying HTML & CSS code, centered on the element that you just clicked.\nExplore the page and get a sense of what selectors might work.\nPay attention to the class and id attributes."
   },
   {
+    "objectID": "slides.html#examples",
+    "href": "slides.html#examples",
+    "title": "Scraping Data From the Web with R",
+    "section": "3 Examples",
+    "text": "3 Examples\n\nWikipedia: Scraping a table from a page.\nCarjam: Scraping paginated results by establishing patterns in the URLs.\nIMDB: Scraping a trickier table & automating it once a week."
+  },
+  {
     "objectID": "slides.html#lets-take-a-look",
     "href": "slides.html#lets-take-a-look",
     "title": "Scraping Data From the Web with R",
