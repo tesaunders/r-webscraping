@@ -16,8 +16,8 @@ electricity <-
   html_table() |> 
   rename(
     location = "Location",
-    consumption_twh = "Consumption(TWh)",
-    per_capita_mwh = "Per capita(MWh)",
+    consumption_twh = "Consumption(TWh per annum)",
+    per_capita_mwh = "Per capita(MWh per annum)",
   ) |> 
   filter(location != "World") |> 
   select(-Year)
